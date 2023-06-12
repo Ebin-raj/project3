@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <style>
+                input[type=text],input[type=email], input[type=password], textarea {
+              width: 100%;
+              padding: 15px;
+              margin: 5px 0 22px 0;
+              display: inline-block;
+              border: none;
+              background: #f1f1f1;
+            }
+            input[type=text]:focus, input[type=password]:focus {
+              background-color: orange;
+              outline: none;
+            }
+             div {
+                        padding: 10px 0;
+                     }
+                .container {
+            padding: 50px;
+          background-color: lightblue;
+        }
+            body{
+          font-family: Calibri, Helvetica, sans-serif;
+          background-color: pink;
+        }
+        .registerbtn {
+          background-color: #4CAF50;
+          color: white;
+          padding: 16px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+          opacity: 0.9;
+        }
+        .registerbtn:hover {
+          opacity: 1;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<center><h2>REGISTRATION</h2></center>
+<form action="" method="post" >
+    <div class="container">
+    {% csrf_token %}
+    Enter the UserName:
+    <input type="text" name="username" placeholder="Enter the UserName"><br><br>
+    Enter the first name:
+    <input type="text" name="first_name" placeholder="Enter the first name"><br><br>
+    Enter the last name:
+    <input type="text" name="last_name" placeholder="Enter the last name"><br><br>
+    Enter your email:
+    <input type="email" name="email" placeholder="Enter your mail"><br><br>
+    Enter the password:
+    <input type="password" name="password" placeholder="Enter the password"><br><br>
+    Confirm your password:
+    <input type="password" name="password1" placeholder="confirm your password"><br><br>
+    <button type="submit" class="registerbtn">Register</button>
+    </div>
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</body>
+</html>
